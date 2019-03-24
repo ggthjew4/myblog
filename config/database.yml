@@ -49,6 +49,10 @@ test:
 #
 production:
   <<: *default
-  database: myblog_production
-  username: myblog
-  password: <%= ENV['MYBLOG_DATABASE_PASSWORD'] %>
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: b258277036011d
+  password: 93e5283e
+  host: us-cdbr-iron-east-03.cleardb.net
+  database: heroku_ba3db6271c3b25d
