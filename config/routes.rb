@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+      sessions: 'users/sessions'
+  }
   resources :articles
-  root to: 'pages#index'
-  get '/about', to: 'pages#about'
+  root to: 'articles#index'
 end
