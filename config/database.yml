@@ -52,7 +52,8 @@ production:
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: b258277036011d
-  password: 93e5283e
-  host: us-cdbr-iron-east-03.cleardb.net
-  database: heroku_ba3db6271c3b25d
+  host: <%= ENV['MYSQL_DATABASE_HOST'] %>
+  database: <%= ENV['MYSQL_DATABASE_NAME'] %>
+  username: <%= ENV['MYSQL_DATABASE_LOGIN_USERNAME'] %>
+  password: <%= ENV['MYSQL_DATABASE_LOGIN_PASSWORD'] %>
+
