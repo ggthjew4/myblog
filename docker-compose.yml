@@ -2,9 +2,6 @@ version: "3"
 services:
   db:
     image: mysql
-    volumes:
-      - data:/var/lib/mysql
-      - ./mysql.cnf:/etc/mysql/conf.d/mysql.cnf
     environment:
       - MYSQL_DATABASE=blogdatabase
       - MYSQL_ROOT_PASSWORD=password
