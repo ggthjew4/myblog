@@ -13,9 +13,6 @@ RUN cd $APP_HOME && bundle install
 
 ADD . $APP_HOME
 
-COPY docker-entrypoint.sh /usr/local/bin
+EXPOSE 3000
 
-RUN chmod 777 /usr/local/bin/docker-entrypoint.sh
-RUN ln -s /usr/local/bin/docker-entrypoint.sh
-WORKDIR $APP_HOME
-ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
