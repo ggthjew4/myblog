@@ -7,6 +7,7 @@
   <% if allow_article_edit_delete?(@article) %>
     <%= link_to "Edit", edit_article_path(@article), class: "btn btn-primary btn-large" %>
     <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are you sure you want to delete this article?"}, class: "btn btn-danger" %>
+  <% end %>
     <div class="container">
       <h2 class="subtitle is-5"><strong><%= @article.comments.count %></strong> Comments</h2>
       <%= render @article.comments %>
@@ -16,5 +17,4 @@
         <%= render 'comments/form' %>
       </div>
     </div>
-  <% end %>
 </div>
