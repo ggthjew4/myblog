@@ -3,6 +3,9 @@ Rails.application.routes.draw do
       sessions: 'users/sessions',
       omniauth_callbacks: "users/omniauth_callbacks"
   }
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
+  resources :comments, only: [:create, :index]
   root to: 'articles#index'
 end
