@@ -2,6 +2,9 @@
 <p>
   <%= link_to "Create new article", new_article_path %>
 </p>
+<div align="center">
+  <%= will_paginate %>
+</div>
   <% @articles.each do |article| %>
     <div class="row">
       <div class="col-xs-8 col-xs-offset-2">
